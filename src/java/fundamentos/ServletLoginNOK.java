@@ -10,13 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
 
 /**
  *
  * @author java
  */
-public class ServletVerificaLogin extends HttpServlet {
+public class ServletLoginNOK extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -33,17 +32,16 @@ public class ServletVerificaLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            RequestDispatcher rd; 
-            if(username.equalsIgnoreCase("alfa") && password.equals("alfa")){
-               rd = request.getRequestDispatcher("LoginOK");
-               rd.forward(request, response);
-            }else{
-               rd = request.getRequestDispatcher("LoginNOK");
-               rd.forward(request, response); 
-            }
-           
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ServletLoginNOK</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1> Usuario NOK :-( </h1>");
+            out.println("</body>");
+            out.println("</html>");
         } finally {            
             out.close();
         }
