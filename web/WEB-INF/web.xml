@@ -8,6 +8,10 @@
         <servlet-name>ServletRecibeDatos</servlet-name>
         <servlet-class>fundamentos.ServletRecibeDatos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerificaLogin</servlet-name>
+        <servlet-class>fundamentos.ServletVerificaLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Saludo</servlet-name>
         <url-pattern>/HolaMundo</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ServletRecibeDatos</servlet-name>
         <url-pattern>/ServletRecibeDatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerificaLogin</servlet-name>
+        <url-pattern>/VerificaLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
