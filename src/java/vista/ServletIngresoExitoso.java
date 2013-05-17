@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Film;
 
 /**
  *
@@ -32,9 +33,7 @@ public class ServletIngresoExitoso extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String idFilm = request.getAttribute("_idFilm").toString();
-            String nameFilm = request.getAttribute("_nameFilm").toString();
-            String directorFilm = request.getAttribute("_directorFilm").toString();
+            Film oF = (Film)request.getAttribute("_film");           
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -42,9 +41,9 @@ public class ServletIngresoExitoso extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Respuesta Ingreso Exitoso</h1>");
-            out.println("<p><h3>ID Film:</h3>"+idFilm+"</p>");
-            out.println("<p><h3>Name Film:</h3>"+nameFilm+"</p>");
-            out.println("<p><h3>Director Film:</h3>"+directorFilm+"</p>");
+            out.println("<p><h3>ID Film:</h3>"+oF.getId()+"</p>");
+            out.println("<p><h3>Name Film:</h3>"+oF.getName()+"</p>");
+            out.println("<p><h3>Director Film:</h3>"+oF.getAutor()+"</p>");
             out.println("</body>");
             out.println("</html>");
         } finally {            
