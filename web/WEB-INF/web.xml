@@ -20,6 +20,18 @@
         <servlet-name>LoginNOK</servlet-name>
         <servlet-class>fundamentos.ServletLoginNOK</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletControladorFilm</servlet-name>
+        <servlet-class>controlador.ServletControladorFilm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletIngresoExitoso</servlet-name>
+        <servlet-class>vista.ServletIngresoExitoso</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDatosErroneos</servlet-name>
+        <servlet-class>vista.ServletDatosErroneos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Saludo</servlet-name>
         <url-pattern>/HolaMundo</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>LoginNOK</servlet-name>
         <url-pattern>/LoginNOK</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletControladorFilm</servlet-name>
+        <url-pattern>/scf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletIngresoExitoso</servlet-name>
+        <url-pattern>/IngresoExitoso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDatosErroneos</servlet-name>
+        <url-pattern>/DatosErroneos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
