@@ -32,6 +32,18 @@
         <servlet-name>ServletDatosErroneos</servlet-name>
         <servlet-class>vista.ServletDatosErroneos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletControladorBuscaFilm</servlet-name>
+        <servlet-class>controlador.ServletControladorBuscaFilm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletVistaExisteFilm</servlet-name>
+        <servlet-class>vista.ServletVistaExisteFilm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletVistaNoExisteFilm</servlet-name>
+        <servlet-class>vista.ServletVistaNoExisteFilm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Saludo</servlet-name>
         <url-pattern>/HolaMundo</url-pattern>
@@ -63,6 +75,18 @@
     <servlet-mapping>
         <servlet-name>ServletDatosErroneos</servlet-name>
         <url-pattern>/DatosErroneos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletControladorBuscaFilm</servlet-name>
+        <url-pattern>/SCBuscaFilm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletVistaExisteFilm</servlet-name>
+        <url-pattern>/ExisteFilm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletVistaNoExisteFilm</servlet-name>
+        <url-pattern>/NoExisteFilm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

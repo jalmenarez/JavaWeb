@@ -116,5 +116,13 @@ public class ServicioJDBCFilms extends ServicioJDBC {
     public boolean agregarNuevoFilm(Film oF) {
         return this.agregarNuevoFilm(oF.getId(),oF.getName(),oF.getAutor());
     }
+
+    public Film getFilmByID(String idFilm) {
+        try{
+            return getFilmByID(Integer.parseInt(idFilm));
+        }catch(RuntimeException e){
+            return null;
+        }
+    }
       
 }

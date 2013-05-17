@@ -72,4 +72,8 @@ public class Film {
           return false;  
         }
     }    
+
+    public boolean isValid() {
+        return !this.autor.isEmpty() && this.id > 0 && !this.name.isEmpty();
+    }
 }
