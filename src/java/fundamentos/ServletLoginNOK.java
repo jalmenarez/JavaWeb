@@ -31,8 +31,9 @@ public class ServletLoginNOK extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String username = request.getAttribute("_username").toString();
+        String password = request.getAttribute("_password").toString();
         try {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -40,6 +41,7 @@ public class ServletLoginNOK extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1> Usuario NOK :-( </h1>");
+            out.println("<h3> El usuario y la password son: "+username+","+password+" </h3>");
             out.println("</body>");
             out.println("</html>");
         } finally {            

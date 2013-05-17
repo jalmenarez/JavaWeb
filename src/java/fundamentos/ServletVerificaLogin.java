@@ -30,11 +30,12 @@ public class ServletVerificaLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
         try {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             RequestDispatcher rd; 
+            request.setAttribute("_username", username);
+            request.setAttribute("_password", password);
             if(username.equalsIgnoreCase("alfa") && password.equals("alfa")){
                rd = request.getRequestDispatcher("LoginOK");
                rd.forward(request, response);
@@ -44,7 +45,7 @@ public class ServletVerificaLogin extends HttpServlet {
             }
            
         } finally {            
-            out.close();
+            
         }
     }
 
