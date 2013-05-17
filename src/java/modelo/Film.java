@@ -1,7 +1,7 @@
 package modelo;
 
 public class Film {
-    private long id;
+    private int id;
     private String name;
     private String autor;
     
@@ -11,17 +11,17 @@ public class Film {
         this.autor = "";
     }
 
-    public Film(long id, String name, String autor) {
+    public Film(int id, String name, String autor) {
         this.id = id;
         this.name = name;
         this.autor = autor;
     }
     
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
     

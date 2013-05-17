@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Film;
+import servicios.ServicioJDBCFilms;
 
 /**
  *
@@ -34,8 +35,15 @@ public class ServletControladorFilm extends HttpServlet {
             RequestDispatcher rd; 
             request.setAttribute("_film", oF);           
             if(oF.validar()){
-                rd = request.getRequestDispatcher("IngresoExitoso");
-                rd.forward(request, response);
+                ServicioJDBCFilms oSJDBC = new ServicioJDBCFilms();
+                oSJDBC.conectaBD();
+                if(oSJDBC.agregarNuevoFilm(oF)){
+                 rd = request.getRequestDispatcher("IngresoExitoso");
+                 rd.forward(request, response);
+                }else{
+                 rd = request.getRequestDispatcher("DatosErroneos");
+                 rd.forward(request, response);     
+                }
             }else{
                 rd = request.getRequestDispatcher("DatosErroneos");
                 rd.forward(request, response);    
