@@ -19,6 +19,9 @@
     </global-forwards>
 
     <action-mappings>
+        <action path="/sacf" type="controlador.StrutActionControladorFilm">
+            <forward name="success" path="/jsp/jspIngresoExitosoWithBean.jsp" />
+        </action>    
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     
