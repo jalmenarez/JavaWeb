@@ -38,7 +38,7 @@ public class ServletControladorFilm extends HttpServlet {
                 ServicioJDBCFilms oSJDBC = new ServicioJDBCFilms();
                 oSJDBC.conectaBD();
                 if(oSJDBC.agregarNuevoFilm(oF)){
-                 rd = request.getRequestDispatcher("IngresoExitoso");
+                 rd = request.getRequestDispatcher("/jsp/jspIngresoExitosoWithBean.jsp");
                  rd.forward(request, response);
                 }else{
                  rd = request.getRequestDispatcher("DatosErroneos");

@@ -16,5 +16,6 @@
             String idFilm = (String)request.getAttribute("_idFilm");
         %>
         <h1>No se encontró el Film con ID: <%=idFilm%></h1>
+        <a href="buscarFilmPorID.html"><< Back</a>
     </body>
 </html>

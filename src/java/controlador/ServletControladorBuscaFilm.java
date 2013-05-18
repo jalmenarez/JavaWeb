@@ -41,7 +41,7 @@ public class ServletControladorBuscaFilm extends HttpServlet {
              Film oF = oSJDBC.getFilmByID(idFilm);
              if(oF != null && oF.isValid()){
                 request.setAttribute("_film", oF); 
-                rd = request.getRequestDispatcher("/jsp/jspExisteFilm.jsp");
+                rd = request.getRequestDispatcher("/jsp/jspExisteFilmWithBean.jsp");
                 rd.forward(request, response);                
             }else{
                 rd = request.getRequestDispatcher("/jsp/jspNoExisteFilm.jsp");
