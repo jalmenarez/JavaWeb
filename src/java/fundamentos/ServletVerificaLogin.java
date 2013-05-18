@@ -32,10 +32,10 @@ public class ServletVerificaLogin extends HttpServlet {
             request.setAttribute("_username", username);
             request.setAttribute("_password", password);
             if(username.equalsIgnoreCase("alfa") && password.equals("alfa")){
-               rd = request.getRequestDispatcher("LoginOK");
+               rd = request.getRequestDispatcher("/jsp/jspLoginOK.jsp");
                rd.forward(request, response);
             }else{
-               rd = request.getRequestDispatcher("LoginNOK");
+               rd = request.getRequestDispatcher("/jsp/jspLoginNOK.jsp");
                rd.forward(request, response); 
             }
            
