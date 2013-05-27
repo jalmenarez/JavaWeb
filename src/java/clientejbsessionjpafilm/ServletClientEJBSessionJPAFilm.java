@@ -47,12 +47,9 @@ public class ServletClientEJBSessionJPAFilm extends HttpServlet {
             out.println("<title>Servlet ServletClientEJBSessionJPAFilm</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<p>Prueba: </p>");
             out.println("<h1>El film es: " + oF.getName() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        } catch (Exception e){
-            out.println("<p>Error: "+e.getMessage()+"</p>"); 
         } finally {           
             out.close();
         }
