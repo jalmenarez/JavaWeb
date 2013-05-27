@@ -61,6 +61,10 @@
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>ServletClientEJBSessionJPAFilm</servlet-name>
+        <servlet-class>clientejbsessionjpafilm.ServletClientEJBSessionJPAFilm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Saludo</servlet-name>
         <url-pattern>/HolaMundo</url-pattern>
@@ -108,6 +112,10 @@
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletClientEJBSessionJPAFilm</servlet-name>
+        <url-pattern>/ClientEJBJPA</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
