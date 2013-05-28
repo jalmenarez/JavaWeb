@@ -5,6 +5,7 @@
 package controlador;
 
 import ejbsession.EJBSessionJPAFilm;
+import ejbsession.FilmFacade;
 import entidad.Film;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,6 +23,8 @@ public class clienteJPA extends HttpServlet {
     
     @EJB
     EJBSessionJPAFilm ejbSesionJPA;
+    @EJB
+    FilmFacade filmFacade;
 
     /**
      * Processes requests for both HTTP
@@ -39,15 +42,25 @@ public class clienteJPA extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String idFilm = request.getParameter("idFilm");
-            Film oF = ejbSesionJPA.buscar(Integer.parseInt(idFilm));
-            ejbSesionJPA.eliminar(oF);
+            Film oF = null;
+            Film oFilm1 = null;
+            if(idFilm != null){
+            //Primera forma
+            oF = ejbSesionJPA.buscar(Integer.parseInt(idFilm));
+            //Segunda forma
+            oFilm1 = filmFacade.find(Integer.valueOf(idFilm));            
+            }
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet clienteJPA</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Se borró el Film con id: " + idFilm + "</h1>");
+            if(oFilm1 != null){
+            out.println("<h1>Se obtuvo el Film con nombre: " + oFilm1.getName() + "</h1>");
+            }else {
+            out.println("<h1>No se encontró el Film.</h1>");
+            }
             out.println("</body>");
             out.println("</html>");
         } catch (Exception e){
