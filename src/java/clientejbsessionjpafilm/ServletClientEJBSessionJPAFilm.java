@@ -40,15 +40,16 @@ public class ServletClientEJBSessionJPAFilm extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            Film oF = ejbSesionJPA.buscar(Integer.valueOf(20));
-            
-            //Agregar film
-            Film oNF = new Film();
-            oNF.setId(30);
-            oNF.setAutor("Charles");
-            oNF.setName("Rapido y Furioso");
-            ejbSesionJPA.agregar(oNF);
-            
+            Film oF = ejbSesionJPA.buscar(Integer.valueOf(30));
+            Film oNF = null;
+            if(oF == null){
+             //Agregar film
+             oNF = new Film();
+             oNF.setId(30);
+             oNF.setAutor("Charles");
+             oNF.setName("Rapido y Furioso");
+             ejbSesionJPA.agregar(oNF);
+            }        
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -56,7 +57,9 @@ public class ServletClientEJBSessionJPAFilm extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>El film es: " + oF.getName() + "</h1>");
-            out.println("<h2>Se agregó: "+oNF.toString()+"<h2>");
+            if(oNF != null){
+             out.println("<h2>Se agregó: "+oNF.toString()+"<h2>");
+            }
             out.println("</body>");
             out.println("</html>");
         } catch(Exception e){
