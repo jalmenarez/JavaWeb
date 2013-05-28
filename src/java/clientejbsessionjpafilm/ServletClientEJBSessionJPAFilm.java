@@ -41,6 +41,14 @@ public class ServletClientEJBSessionJPAFilm extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             Film oF = ejbSesionJPA.buscar(Integer.valueOf(20));
+            
+            //Agregar film
+            Film oNF = new Film();
+            oNF.setId(30);
+            oNF.setAutor("Charles");
+            oNF.setName("Rapido y Furioso");
+            ejbSesionJPA.agregar(oNF);
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -48,8 +56,11 @@ public class ServletClientEJBSessionJPAFilm extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>El film es: " + oF.getName() + "</h1>");
+            out.println("<h2>Se agregó: "+oNF.toString()+"<h2>");
             out.println("</body>");
             out.println("</html>");
+        } catch(Exception e){
+            out.println("<p>Error: "+e.getMessage()+"</p>");
         } finally {           
             out.close();
         }
