@@ -65,6 +65,10 @@
         <servlet-name>ServletClientEJBSessionJPAFilm</servlet-name>
         <servlet-class>clientejbsessionjpafilm.ServletClientEJBSessionJPAFilm</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>clienteJPA</servlet-name>
+        <servlet-class>controlador.clienteJPA</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Saludo</servlet-name>
         <url-pattern>/HolaMundo</url-pattern>
@@ -116,6 +120,10 @@
     <servlet-mapping>
         <servlet-name>ServletClientEJBSessionJPAFilm</servlet-name>
         <url-pattern>/ClientEJBJPA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>clienteJPA</servlet-name>
+        <url-pattern>/clienteJPA</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
