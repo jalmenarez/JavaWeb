@@ -10,7 +10,7 @@ import javax.xml.ws.WebServiceRef;
 
 /**
  *
- * @author java
+ * @author jalmenarez
  */
 public class ServletVerificaLogin extends HttpServlet {
     
