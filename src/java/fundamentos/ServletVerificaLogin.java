@@ -6,12 +6,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
+import javax.xml.ws.WebServiceRef;
 
 /**
  *
  * @author java
  */
 public class ServletVerificaLogin extends HttpServlet {
+    
+    @WebServiceRef(wsdlLocation="http://localhost:8080/WebServiceAutentificacion/WSAutentificacion?wsdl")
+    public servicios.WSAutentificacion_Service servicio;
 
     /**
      * Processes requests for both HTTP
@@ -31,8 +35,10 @@ public class ServletVerificaLogin extends HttpServlet {
             RequestDispatcher rd; 
             request.setAttribute("_username", username);
             request.setAttribute("_password", password);
-            if(username.equalsIgnoreCase("alfa") && password.equals("alfa")){
-               rd = request.getRequestDispatcher("/jsp/jspLoginOK.jsp");
+            servicio=new servicios.WSAutentificacion_Service();
+            servicios.WSAutentificacion port=servicio.getWSAutentificacionPort();
+            if(port.autenticarLogin(username, password)){
+               rd = request.getRequestDispatcher("buscarFilmPorID.html");
                rd.forward(request, response);
             }else{
                rd = request.getRequestDispatcher("/jsp/jspLoginNOK.jsp");
