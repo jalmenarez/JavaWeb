@@ -58,6 +58,7 @@ public class clienteJPA extends HttpServlet {
             out.println("<body>");
             if(oFilm1 != null){
             out.println("<h1>Se obtuvo el Film con nombre: " + oFilm1.getName() + "</h1>");
+            out.println("<p>Film: "+oFilm1.toString()+"</p>");
             }else {
             out.println("<h1>No se encontró el Film.</h1>");
             }
